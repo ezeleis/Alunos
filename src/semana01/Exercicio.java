@@ -18,6 +18,7 @@ public class Exercicio {
 
                 ArrayList<Double> grades = new ArrayList<>();
 
+                // Input three grades for the student
                 for (int i = 0; i < 3; i++) {
                     System.out.print("Digite a nota " + (i + 1) + " para " + nomeAluno + ": ");
                     double nota = scanner.nextDouble();
@@ -41,7 +42,18 @@ public class Exercicio {
             for (int j = 0; j < 3; j++) {
                 System.out.println("Nota " + (j + 1) + ": " + grades.get(j));
             }
+
+            double average = calculateAverage(grades);
+            System.out.println("Média: " + average);
             System.out.println();
         }
+    }
+
+    private static double calculateAverage(ArrayList<Double> grades) {
+        double sum = 0;
+        for (double grade : grades) {
+            sum += grade;
+        }
+        return sum / grades.size();
     }
 }
