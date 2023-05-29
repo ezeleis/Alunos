@@ -1,3 +1,4 @@
+package semana01;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -18,7 +19,6 @@ public class Exercicio {
 
                 ArrayList<Double> grades = new ArrayList<>();
 
-                // Input three grades for the student
                 for (int i = 0; i < 3; i++) {
                     System.out.print("Digite a nota " + (i + 1) + " para " + nomeAluno + ": ");
                     double nota = scanner.nextDouble();
@@ -46,6 +46,26 @@ public class Exercicio {
             double average = calculateAverage(grades);
             System.out.println("Média: " + average);
             System.out.println();
+        }
+
+        System.out.println("Alunos Aprovados:");
+        for (int i = 0; i < alunos.size(); i++) {
+            String aluno = alunos.get(i);
+            ArrayList<Double> grades = notas.get(i);
+            double average = calculateAverage(grades);
+            if (average >= 7) {
+                System.out.println("Aluno: " + aluno + ", Média: " + average);
+            }
+        }
+
+        System.out.println("Alunos Reprovados:");
+        for (int i = 0; i < alunos.size(); i++) {
+            String aluno = alunos.get(i);
+            ArrayList<Double> grades = notas.get(i);
+            double average = calculateAverage(grades);
+            if (average < 7) {
+                System.out.println("Aluno: " + aluno + ", Média: " + average);
+            }
         }
     }
 
